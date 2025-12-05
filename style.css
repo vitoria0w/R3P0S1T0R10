@@ -1,0 +1,87 @@
+/* ===== GERAL ===== */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden; /* impede rolagem horizontal */
+    font-family: Arial, sans-serif;
+}
+
+/* ===== MENU ===== */
+
+header {
+    position: relative;
+    background: #f3f3f3;
+    padding: 10px;
+}
+
+.menu-btn {
+    font-size: 28px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#btn-close {
+    display: none; /* só aparece quando o menu está aberto */
+}
+
+nav#menu {
+    display: none; /* escondido inicialmente */
+    background: #ddd;
+    padding: 10px;
+}
+
+nav#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav#menu ul li {
+    margin: 10px 0;
+}
+
+/* Mostrar menu ao passar o mouse no header */
+header:hover #menu {
+    display: block;
+}
+
+/* ===== GRID DE OBJETOS ===== */
+
+.grid-objetos {
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 2 colunas em telas médias */
+@media (min-width: 800px) {
+    .grid-objetos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 3 colunas em telas grandes */
+@media (min-width: 1200px) {
+    .grid-objetos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.objeto {
+    background: #eee;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* ===== REMOVE MENU NA IMPRESSÃO ===== */
+@media print {
+    nav#menu,
+    .menu-btn {
+        display: none !important;
+    }
+}
